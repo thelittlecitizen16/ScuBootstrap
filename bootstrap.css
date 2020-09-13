@@ -1,0 +1,65 @@
+.MusicalInstrumentsImg{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.ShoppingCart{
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+}
+.ShoppingCartImg{
+   
+    height: 40px;
+    width: 154px;
+}
+.title{
+    font-size: 25px;
+    margin-top: -17px;
+    margin-bottom: 8px;
+}
+.body{
+    background-color: lightgray;
+}
+.MusicalInstruments{
+    background-color: white;
+    border-radius: 6px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+#roledDopdown{
+    background-color: grey;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+#topbar {
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .herf {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    float: right;
+  }
+  
+  #topbar .herf:hover {
+    border-top: 4px solid darkcyan;
+  }
+
+  .left{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    float: left;
+  }
+ 
