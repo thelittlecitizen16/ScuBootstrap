@@ -22,22 +22,36 @@ function AddMusicalInstrument(imgSrc, title,description,price) {
     document.getElementById('allMusicalInstruments').innerHTML += html;
 }
 
+
 AddAllMusicalInstruments();
+
+function GetInstrumentsByOption(optionValue) {
+    if (optionValue=="all")
+    {
+        return fluteInstrument;
+    }
+    else{
+        return fluteInstrument.filter(i=>i.instrumentType.name==optionValue);
+    }
+}
 
 function ChangeByOption() {
     let optionValue = document.getElementById("roledDopdown").value;
+    let fluteInstrumentByType= GetInstrumentsByOption(optionValue);
 
-    let fluteInstrumentByType= fluteInstrument.filter(i=>i.instrumentType.name==optionValue);
-
-    if (optionValue=="all")
-    {
-        AddAllMusicalInstruments();
-    } 
-    else
-    {
-        document.getElementById('allMusicalInstruments').innerHTML = "";
-        fluteInstrumentByType.forEach(element => {
-             AddMusicalInstrument(element.imagePath,element.name,element.description,element.price);
-         });
-    }
+    document.getElementById('allMusicalInstruments').innerHTML = "";
+    fluteInstrumentByType.forEach(element => {
+        AddMusicalInstrument(element.imagePath,element.name,element.description,element.price);
+    }); 
 }
+
+function search() {
+    let data = document.getElementById("search").value;
+    let optionValue = document.getElementById("roledDopdown").value;
+    let fluteInstrumentByType= GetInstrumentsByOption(optionValue);
+    fluteInstrumentByType= fluteInstrumentByType.filter(i=>i.name.includes(data));
+    document.getElementById('allMusicalInstruments').innerHTML = "";
+    fluteInstrumentByType.forEach(element => {
+        AddMusicalInstrument(element.imagePath,element.name,element.description,element.price);
+    }); 
+};
