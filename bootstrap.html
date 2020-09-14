@@ -33,8 +33,10 @@
             <div class="col-sm-2 text-right try">
                 <h3 id="h3">סינון</h3>
                 <div>
-                    <select id="roledDopdown">
-                        <option value="none">סוג כלי נגינה</option>
+                    <select onchange="ChangeByOption()" id="roledDopdown">
+                        <option value="all">כל סוגי כלי נגינה</option>
+                        <option value="windInstrument">נשיפה</option>
+                        <option value="stringInstrument">מיתר</option>
                         </select>
                 </div>
                 <input type="text" name="חיפוש כלי נגינה" id="search" placeholder="חיפוש כלי נגינה" >

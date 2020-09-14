@@ -6,7 +6,7 @@ function AddAllMusicalInstruments(){
 }
 
 function AddMusicalInstrument(imgSrc, title,description,price) {
-    console.table(fluteInstrument);
+    //console.table(fluteInstrument);
 
     var html = `<div class="col-sm-3 border d-flex justify-content-center text-center MusicalInstruments"><div class="MusicalInstruments">
     <img  class = "MusicalInstrumentsImg" class="img-fluid" src=${imgSrc} alt="Clarinet" id="Clarinet">
@@ -23,3 +23,21 @@ function AddMusicalInstrument(imgSrc, title,description,price) {
 }
 
 AddAllMusicalInstruments();
+
+function ChangeByOption() {
+    let optionValue = document.getElementById("roledDopdown").value;
+
+    let fluteInstrumentByType= fluteInstrument.filter(i=>i.instrumentType.name==optionValue);
+
+    if (optionValue=="all")
+    {
+        AddAllMusicalInstruments();
+    } 
+    else
+    {
+        document.getElementById('allMusicalInstruments').innerHTML = "";
+        fluteInstrumentByType.forEach(element => {
+             AddMusicalInstrument(element.imagePath,element.name,element.description,element.price);
+         });
+    }
+}
