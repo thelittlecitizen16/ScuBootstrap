@@ -23,9 +23,7 @@ function AddMusicalInstrument(imgSrc, title,description,price) {
     </div>`
 
     document.getElementById('allMusicalInstruments').innerHTML += html;
-    //currentMusicalInstruments=fluteInstrument;
 }
-
 
 AddAllMusicalInstruments(fluteInstrument);
 
@@ -42,12 +40,14 @@ function GetInstrumentsByOption(optionValue) {
 function ChangeByOption() {
     let optionValue = document.getElementById("roledDopdown").value;
     SearchObject.type=optionValue;
+
     FilterByAllOptions();
 }
 
-function search(currentMusicalInstrument) {
+function search() {
     let data = document.getElementById("search").value;
      SearchObject.search=data;
+
      FilterByAllOptions();
 };
 
@@ -55,23 +55,26 @@ function search(currentMusicalInstrument) {
 function changeByPrice() {
      let checkboxElements = document.getElementsByClassName("checkbox");
      SearchObject.price=checkboxElements;
-     console.log(SearchObject.price);
+
      FilterByAllOptions();
 };
+
 function FilterByAllOptions()
 {
     let fluteInstrumentFilter=fluteInstrument;
+
     if(SearchObject.type!="")
     {
         let fluteInstrumentByType= GetInstrumentsByOption(SearchObject.type);
-        fluteInstrumentFilter=fluteInstrumentByType;
-       
+        fluteInstrumentFilter=fluteInstrumentByType; 
     }
+    
     if(SearchObject.search!="")
     {
         let results =fluteInstrumentFilter.filter(i=>i.name.includes(SearchObject.search));
         fluteInstrumentFilter=results;
     }
+    
     if(SearchObject.price.length>0)
     {
         let havePriceRannage=false;
@@ -97,6 +100,7 @@ function FilterByAllOptions()
             if(SearchObject.price[i].checked == true)
             {
             const price = SearchObject.price[i].value.split('+')[0];
+          
             fluteInstrumentFilter.filter(i=>i.price>=price).forEach(element => {
                 MusicalInstrumentsByPrice.add(element);
             });
@@ -108,21 +112,23 @@ function FilterByAllOptions()
             if(SearchObject.price[i].checked == true)
             {
             const prices = SearchObject.price[i].value.split('-');
+          
             fluteInstrumentFilter.filter(i=>i.price>=prices[0] &&i.price<=prices[1]).forEach(element => {
                 MusicalInstrumentsByPrice.add(element);
     
             });
+
             havePriceRannage=true;
             }
         }
-        if(havePriceRannage==true)
-        {
-            let MusicalInstrumentsByPriceArray=[];
-            MusicalInstrumentsByPrice.forEach(element => {
-                MusicalInstrumentsByPriceArray.push(element);
-            });
-            fluteInstrumentFilter=MusicalInstrumentsByPriceArray;
-        }
+    }
+    if(havePriceRannage==true)
+    {
+        let MusicalInstrumentsByPriceArray=[];
+        MusicalInstrumentsByPrice.forEach(element => {
+            MusicalInstrumentsByPriceArray.push(element);
+        });
+        fluteInstrumentFilter=MusicalInstrumentsByPriceArray;
     }
     }
     
