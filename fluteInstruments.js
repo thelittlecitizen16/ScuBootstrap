@@ -14,7 +14,7 @@ var fluteInstrument = [{
     instrumentOrders: null,
     instrumentType: instrumentType[0],
     name: "trumprt",
-    price: "1500₪",
+    price: 1500,
     typeID: 1
   },
   {
@@ -24,7 +24,7 @@ var fluteInstrument = [{
     instrumentOrders: null,
     instrumentType: instrumentType[0],
     name: "harmonica",
-    price: "35₪",
+    price: 35,
     typeID: 1
   },
   {
@@ -34,7 +34,7 @@ var fluteInstrument = [{
     instrumentOrders: null,
     instrumentType: instrumentType[0],
     name: "flute",
-    price: "35₪",
+    price: 35,
     typeID: 1
   }, 
   {
@@ -44,7 +44,7 @@ var fluteInstrument = [{
     instrumentOrders: null,
     instrumentType: instrumentType[0],
     name: "trombone",
-    price: "2400₪",
+    price: 2400,
     typeID: 1
   },
   {
@@ -54,7 +54,7 @@ var fluteInstrument = [{
     instrumentOrders: null,
     instrumentType: instrumentType[0],
     name: "Clarinet",
-    price: "1400₪",
+    price: 1400,
     typeID: 1
   },
   {
@@ -64,6 +64,6 @@ var fluteInstrument = [{
     instrumentOrders: null,
     instrumentType: instrumentType[1],
     name: "violin",
-    price: "2300₪",
+    price: 2300,
     typeID: 2
   }]
